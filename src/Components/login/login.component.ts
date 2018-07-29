@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from "./login.service";
-import {LoginResponse } from "../../Models/Models";
+import { LoginService} from "./login.service";
+import { LoginResponse } from "../../Models/Models";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   public loginResp: Array<LoginResponse> = [];
   public username:string;
   public password:string;
-  constructor(public loginService:LoginService) { 
+  constructor(public loginService:LoginService, public router:Router) { 
     this.username = "shjbf";
     this.password= "aksjbdfjashb";
   }
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit {
 
     });
     console.log(this.loginResp);
-
+    // passing data from one component to another component as a Query Parameter.
+    this.router.navigate(["/home", { username:"sandeep", password:"sandeep"}]);
 
   } 
 

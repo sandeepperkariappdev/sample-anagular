@@ -7,12 +7,14 @@ import {LoginService} from "../Components/login/login.service";
 import {HttpModule} from "@angular/http";
 import { HomeComponent } from '../Components/home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
+import { ProfileComponent } from '../Components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
