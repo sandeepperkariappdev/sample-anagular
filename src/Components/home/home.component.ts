@@ -10,8 +10,9 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(public route:ActivatedRoute) { }
+  constructor(public route:ActivatedRoute, public router:Router) { }
   ngOnInit() {    
+    console.log(this.route.snapshot.paramMap.get("username")  + "Params Map get ");
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) => { // (+) before `params.get()` turns the string into a number        
         +params.get('username');
@@ -21,9 +22,8 @@ export class HomeComponent implements OnInit {
     );
   }
 
-
   navToProfile(){
-    
+      //this.router.navigated([])
   }
 
 }
